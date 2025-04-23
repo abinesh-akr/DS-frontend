@@ -164,7 +164,7 @@ function App() {
           </h1>
           <div className="image-container">
             <img
-              src="sun.png"
+              src="./sun.png"
               alt="Sunny Weather"
               className="weather-image"
             />
