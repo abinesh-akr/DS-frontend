@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Bar } from 'react-chartjs-2';
+import sunImage from './sun.png';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -164,7 +165,7 @@ function App() {
           </h1>
           <div className="image-container">
             <img
-              src="./sun.png"
+              src="{sunImage}"
               alt="Sunny Weather"
               className="weather-image"
             />
