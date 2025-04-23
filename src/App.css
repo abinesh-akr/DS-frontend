@@ -10,12 +10,12 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 /* Container for the form */
@@ -23,30 +23,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 /* Card container */
 .bg-white {
   background: #ffffff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
   width: 100%;
-  max-width: 28rem;
+  max-width: 40rem; /* Wider for desktop */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bg-white:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Heading */
 .text-2xl {
-  font-size: 1.75rem;
+  font-size: 2.25rem; /* Larger for desktop */
   font-weight: 700;
   color: #1f2937;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -54,26 +55,26 @@ body {
 form.space-y-4 {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem; /* More spacing for desktop */
 }
 
 /* Labels */
 label.text-sm {
-  font-size: 0.875rem;
+  font-size: 1rem; /* Slightly larger for desktop */
   font-weight: 500;
   color: #374151;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   display: block;
 }
 
 /* Inputs and Select */
 input, select {
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
+  padding: 1rem 1.5rem; /* More padding for comfort */
+  font-size: 1.125rem; /* Larger text for readability */
   color: #1f2937;
   background-color: #f9fafb;
   border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   width: 100%;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -81,7 +82,7 @@ input, select {
 input:focus, select:focus {
   outline: none;
   border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
   background-color: #ffffff;
 }
 
@@ -92,20 +93,21 @@ input::placeholder {
 
 /* Button */
 button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 1rem 2rem; /* Larger button for desktop */
+  font-size: 1.125rem;
   font-weight: 600;
   color: #ffffff;
   background: linear-gradient(90deg, #3b82f6, #2563eb);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover:not(:disabled) {
   background: linear-gradient(90deg, #2563eb, #1d4ed8);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 button:disabled {
@@ -115,9 +117,9 @@ button:disabled {
 
 /* Prediction and Error Messages */
 .bg-green-100, .bg-red-100 {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
   text-align: center;
 }
 
@@ -132,21 +134,41 @@ button:disabled {
 }
 
 .text-lg {
-  font-size: 1.125rem;
+  font-size: 1.25rem; /* Larger for desktop */
   font-weight: 600;
 }
 
 /* Chart container */
 .chart-container {
-  margin-top: 1.5rem;
-  padding: 1rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
   background: #ffffff;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  height: 300px; /* Fixed height for chart */
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  height: 400px; /* Larger chart for desktop */
 }
 
 /* Responsive adjustments */
+@media (max-width: 768px) {
+  .bg-white {
+    padding: 2rem;
+    max-width: 32rem;
+  }
+
+  .text-2xl {
+    font-size: 1.75rem;
+  }
+
+  input, select, button {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .chart-container {
+    height: 300px; /* Adjusted for smaller screens */
+  }
+}
+
 @media (max-width: 640px) {
   .bg-white {
     padding: 1.5rem;
@@ -163,6 +185,6 @@ button:disabled {
   }
 
   .chart-container {
-    height: 250px; /* Smaller height on mobile */
+    height: 250px;
   }
 }
