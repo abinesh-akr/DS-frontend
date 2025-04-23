@@ -175,7 +175,7 @@ function App() {
               className="weather-image"
             />
             <img
-              src="wind.png"
+              src="/wind.png"
               alt="Windy Weather"
               className="weather-image"
             />
