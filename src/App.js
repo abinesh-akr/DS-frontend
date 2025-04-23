@@ -165,12 +165,12 @@ function App() {
           </h1>
           <div className="image-container">
             <img
-              src="{sunImage}"
+              src="/sun.png"
               alt="Sunny Weather"
               className="weather-image"
             />
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXpem0JRuIPa8fKm8BGLZpHUPh5LgcANICJQ&s"
+              src="/cloud.png"
               alt="Cloudy Weather"
               className="weather-image"
             />
