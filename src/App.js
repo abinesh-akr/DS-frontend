@@ -170,7 +170,7 @@ function App() {
               className="weather-image"
             />
             <img
-              src="cloud.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXpem0JRuIPa8fKm8BGLZpHUPh5LgcANICJQ&s"
               alt="Cloudy Weather"
               className="weather-image"
             />
