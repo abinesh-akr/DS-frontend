@@ -47,7 +47,6 @@ body {
 
 /* Columns */
 .title-column, .form-column, .output-column {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -55,9 +54,10 @@ body {
 
 /* Title column styling */
 .title-column {
+  flex: 2; /* Increased flex value to make title-column wider */
   align-items: center;
   text-align: center;
-  width: 1000px;
+  min-width: 400px; /* Minimum width to ensure it doesn't shrink too much */
 }
 
 .text-3xl {
@@ -71,18 +71,19 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%; /* Ensure container takes full width of title-column */
 }
 
 .weather-image {
-  width: 250px;
-  height: 100px;
-  object-fit: contain;
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Changed to cover to fill the region */
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   transition: transform 0.3s ease;
 }
 
 .weather-image:hover {
-  transform: scale(1.1);
+  transform: scale(1.05); /* Slightly reduced scale for better fit */
 }
 
 /* Form styling */
@@ -186,7 +187,7 @@ button:disabled {
   .bg-white {
     flex-direction: column;
     padding: 2rem;
-    width: 1500px;
+    width: 100%; /* Adjusted to full width for responsiveness */
   }
 
   .title-column, .form-column, .output-column {
@@ -197,11 +198,13 @@ button:disabled {
   .image-container {
     flex-direction: row;
     justify-content: center;
+    width: 100%;
   }
 
   .weather-image {
-    width: 60px;
-    height: 60px;
+    width: 100%; /* Full width for smaller screens */
+    height: auto;
+    object-fit: cover; /* Maintain cover for consistency */
   }
 
   .chart-container {
@@ -224,8 +227,8 @@ button:disabled {
   }
 
   .weather-image {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: auto;
   }
 
   .chart-container {
@@ -248,8 +251,8 @@ button:disabled {
   }
 
   .weather-image {
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    height: auto;
   }
 
   .chart-container {
