@@ -18,22 +18,25 @@ body {
   padding: 2rem;
 }
 
-/* Container for the form */
+/* Main container */
 .min-h-screen {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 80rem; /* Wide container for desktop */
 }
 
-/* Card container */
+/* Card container with two columns */
 .bg-white {
   background: #ffffff;
   border-radius: 1.25rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   padding: 3rem;
   width: 100%;
-  max-width: 40rem; /* Wider for desktop */
+  display: flex;
+  flex-direction: row; /* Side-by-side layout */
+  gap: 3rem; /* Space between columns */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -42,9 +45,16 @@ body {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Form and output columns */
+.form-column, .output-column {
+  flex: 1; /* Equal width for both columns */
+  display: flex;
+  flex-direction: column;
+}
+
 /* Heading */
 .text-2xl {
-  font-size: 2.25rem; /* Larger for desktop */
+  font-size: 2.25rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 2rem;
@@ -55,12 +65,12 @@ body {
 form.space-y-4 {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* More spacing for desktop */
+  gap: 1.5rem;
 }
 
 /* Labels */
 label.text-sm {
-  font-size: 1rem; /* Slightly larger for desktop */
+  font-size: 1rem;
   font-weight: 500;
   color: #374151;
   margin-bottom: 0.5rem;
@@ -69,8 +79,8 @@ label.text-sm {
 
 /* Inputs and Select */
 input, select {
-  padding: 1rem 1.5rem; /* More padding for comfort */
-  font-size: 1.125rem; /* Larger text for readability */
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
   color: #1f2937;
   background-color: #f9fafb;
   border: 1px solid #d1d5db;
@@ -93,7 +103,7 @@ input::placeholder {
 
 /* Button */
 button {
-  padding: 1rem 2rem; /* Larger button for desktop */
+  padding: 1rem 2rem;
   font-size: 1.125rem;
   font-weight: 600;
   color: #ffffff;
@@ -117,7 +127,6 @@ button:disabled {
 
 /* Prediction and Error Messages */
 .bg-green-100, .bg-red-100 {
-  margin-top: 2rem;
   padding: 1.5rem;
   border-radius: 0.75rem;
   text-align: center;
@@ -134,25 +143,39 @@ button:disabled {
 }
 
 .text-lg {
-  font-size: 1.25rem; /* Larger for desktop */
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
 /* Chart container */
 .chart-container {
-  margin-top: 2rem;
   padding: 1.5rem;
   background: #ffffff;
   border-radius: 0.75rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  height: 400px; /* Larger chart for desktop */
+  height: 500px; /* Larger chart for desktop */
+  flex-grow: 1; /* Allow chart to take available space */
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .bg-white {
+    flex-direction: column; /* Stack columns on smaller desktops */
+    padding: 2rem;
+  }
+
+  .min-h-screen {
+    max-width: 40rem;
+  }
+
+  .chart-container {
+    height: 400px;
+  }
+}
+
 @media (max-width: 768px) {
   .bg-white {
     padding: 2rem;
-    max-width: 32rem;
   }
 
   .text-2xl {
@@ -165,14 +188,13 @@ button:disabled {
   }
 
   .chart-container {
-    height: 300px; /* Adjusted for smaller screens */
+    height: 300px;
   }
 }
 
 @media (max-width: 640px) {
   .bg-white {
     padding: 1.5rem;
-    max-width: 100%;
   }
 
   .text-2xl {
