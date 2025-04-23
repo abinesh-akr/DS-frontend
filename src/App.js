@@ -164,17 +164,17 @@ function App() {
           </h1>
           <div className="image-container">
             <img
-              src="https://cdn.pixabay.com/photo/2018/03/22/02/07/sun-3248645_1280.png"
+              src="sun.png"
               alt="Sunny Weather"
               className="weather-image"
             />
             <img
-              src="https://cdn.pixabay.com/photo/2018/03/22/02/07/cloud-3248646_1280.png"
+              src="cloud.png"
               alt="Cloudy Weather"
               className="weather-image"
             />
             <img
-              src="https://cdn.pixabay.com/photo/2018/03/22/02/07/wind-3248647_1280.png"
+              src="wind.png"
               alt="Windy Weather"
               className="weather-image"
             />
